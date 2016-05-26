@@ -40,24 +40,24 @@ class PeakflowSuds:
 
 
     def getTrafficGraph(self, query, graph_configuration):
-        return self.soap.getTrafficGraph(query = query, graph_configuration = graph_configuration)
+        return self.client.service.getTrafficGraph(query = query, graph_configuration = graph_configuration)
 
 
     def runXmlQuery(self, query, output_format = 'xml'):
-        return self.soap.runXmlQuery(query = query, output_format = output_format)
+        return self.client.service.runXmlQuery(query = query, output_format = output_format)
 
     def getDosAlertSummariesXML(self, alert_id):
         print "AlertID:", alert_id
         return self.client.service.getDosAlertSummariesXML(alertID = alert_id)
 
     def getDosAlertDetailsXML(self, alert_id):
-        return self.soap.getDosAlertDetailsXML(alertID = alert_id)
+        return self.client.service.getDosAlertDetailsXML(alertID = alert_id)
 
     def getDosAlertGraph(self, alert_id, width, height):
-        return self.soap.getDosAlertGraph(alertID = alert_id, width = width, height = height)
+        return self.client.service.getDosAlertGraph(alertID = alert_id, width = width, height = height)
 
     def getMitigationSummariesXML(self, filter = '', max_count = 1000):
-        return self.soap.getMitigationSummariesXML(filter = filter, max_count = max_count)
+        return self.client.service.getMitigationSummariesXML(filter = filter, max_count = max_count)
 
 
 
